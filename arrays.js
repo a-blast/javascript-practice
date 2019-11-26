@@ -31,10 +31,10 @@ const problem2_2 = (input) => {
         .findIndex((val, index) => val > input[index + 1])
 
     if (index1 === -1) throw new Error('Array in order')
-    
+
     // get index of last element to have a bigger value than index1
     const nextMax = input
-        .findIndex(val  => val > input[index1])
+        .findIndex(val => val > input[index1])
 
     const index2 = nextMax === -1 ? (input.length - 1) : nextMax
 
@@ -44,4 +44,19 @@ const problem2_2 = (input) => {
 problem2_2(input2)
 problem2_2([3, 5, 6, 7, 8])
 
+//3
+// max subarray sum
+
+const problem3 = (input) => (
+    input.reduce((agg, val) => {
+        agg.maxEndingHere = Math.max(val, agg.maxEndingHere + val)
+        agg.maxSoFar = Math.max(agg.maxSoFar, agg.maxEndingHere)
+        return agg
+    }, {
+        maxEndingHere: 0,
+        maxSoFar: 0
+    }).maxSoFar
+)
+
+console.log(problem3([34, -50, 42, 14, -5, 86]))
 
