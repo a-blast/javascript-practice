@@ -13,3 +13,22 @@ const problem1_brute = (inputWord, inputString) =>
 		}, []);
 
 console.log(problem1_brute('ab', 'abxaba'));
+
+// 2.2
+// Palindrome pairs
+
+const problem2_brute = (inputWords) => {
+	const isPalindrome = (word) => word === word.split('').reverse().join('');
+
+	const pairs = inputWords.reduce((acc, word1, index1) => {
+		const wordPalindromes = inputWords
+			.map((word2, index2) => (isPalindrome(word1 + word2) ? [ index1, index2 ] : false))
+			.filter((val) => val);
+		acc.push(...wordPalindromes)
+		return acc
+	}, []);
+
+	return pairs
+};
+
+console.log(problem2_brute(["code", "edoc", "da", "d" ]))
