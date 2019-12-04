@@ -28,3 +28,7 @@ console.log(maxStack)
 console.log(maxStack.max(), maxStack.pop())
 console.log(maxStack.max(), maxStack.pop())
 console.log(maxStack.max(), maxStack.pop())
+
+// 4.2
+// are brackets balanced
+
