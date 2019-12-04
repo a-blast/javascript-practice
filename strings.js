@@ -92,3 +92,4 @@ const problem3 = (input, k) =>
 
 console.log(problem3('thisisazigzag', 4));
 console.log(problem3('thisisanotherzigzag', 5));
+
